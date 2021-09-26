@@ -1,0 +1,1464 @@
+fileFormatVersion: 2
+guid: bcf43e48f1908034f93eeae73c242eba
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9073910948606562663
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_0
+  - first:
+      213: -8603831696471830372
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_1
+  - first:
+      213: -9155185905765112102
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_2
+  - first:
+      213: -4978705783787794825
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_3
+  - first:
+      213: 6782088088481927578
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_4
+  - first:
+      213: 1740839501517679451
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_5
+  - first:
+      213: 7311465055618891519
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_6
+  - first:
+      213: -216839856734467923
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_7
+  - first:
+      213: 630676927856989073
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_8
+  - first:
+      213: 205152545541643729
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_9
+  - first:
+      213: 6619698824636857603
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_10
+  - first:
+      213: 4353542267141109085
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_11
+  - first:
+      213: 1344170270121297325
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_12
+  - first:
+      213: 9086453223868872276
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_13
+  - first:
+      213: 2200561345301214978
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_14
+  - first:
+      213: -830869700018674126
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_15
+  - first:
+      213: -3843425780979722632
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_16
+  - first:
+      213: 5278421970843793737
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_17
+  - first:
+      213: 7788636086696747290
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_18
+  - first:
+      213: 1920138879729802763
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_19
+  - first:
+      213: 3409886176943179
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_20
+  - first:
+      213: 6585695647966769144
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_21
+  - first:
+      213: -1102372311734408973
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_22
+  - first:
+      213: 1214652460067417335
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_23
+  - first:
+      213: 1207924133161302340
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_24
+  - first:
+      213: 1560902199682525944
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_25
+  - first:
+      213: -1122542439298158415
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_26
+  - first:
+      213: -6951871890539853110
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_27
+  - first:
+      213: -2823079168170966725
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_28
+  - first:
+      213: 8986980925465106427
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_29
+  - first:
+      213: 2641041170943565636
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_30
+  - first:
+      213: -6544754267076359912
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_31
+  - first:
+      213: -4593580397502933876
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_32
+  - first:
+      213: 4871098213609479789
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_33
+  - first:
+      213: 3524481499442133342
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_34
+  - first:
+      213: 259437721376540349
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_35
+  - first:
+      213: -5645757998149352701
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_36
+  - first:
+      213: 8747849598339728629
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_37
+  - first:
+      213: 1747900977041579752
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_38
+  - first:
+      213: 1804073429750252548
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_39
+  - first:
+      213: 7464034511741460665
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_40
+  - first:
+      213: -7709536591503018591
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_41
+  - first:
+      213: 7025404835937998276
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_42
+  - first:
+      213: -837500529566445972
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_43
+  - first:
+      213: -5735375282752078283
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_44
+  - first:
+      213: 7108672030645116708
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_45
+  - first:
+      213: 1797933874970745120
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_46
+  - first:
+      213: -3022754626059801269
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_47
+  - first:
+      213: -4851269043608490902
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_48
+  - first:
+      213: 2409126863331560487
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_49
+  - first:
+      213: -1733784370738993578
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_50
+  - first:
+      213: 4446780434635314312
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_51
+  - first:
+      213: -6604979216757607514
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_52
+  - first:
+      213: 1514683920580614566
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_53
+  - first:
+      213: 845848140971837942
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_54
+  - first:
+      213: -8909142341832082274
+    second: PlayStation 4 - Persona 5 Royal - Tycoon Cards_55
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 996
+        width: 149
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e27c0611ef21280800000000000000
+      internalID: -9073910948606562663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 996
+        width: 148
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c90dc8838ac099880800000000000000
+      internalID: -8603831696471830372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_2
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 996
+        width: 148
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6253accee32f080800000000000000
+      internalID: -9155185905765112102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_3
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 996
+        width: 149
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e452cc77518eab0800000000000000
+      internalID: -4978705783787794825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_4
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 996
+        width: 147
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a919f55fe21de1e50800000000000000
+      internalID: 6782088088481927578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_5
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 996
+        width: 147
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5bede2ad44b82810800000000000000
+      internalID: 1740839501517679451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_6
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 996
+        width: 147
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe78d3faba877560800000000000000
+      internalID: 7311465055618891519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_7
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 996
+        width: 149
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da802369c41adfcf0800000000000000
+      internalID: -216839856734467923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_8
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 996
+        width: 149
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19353fc035d90c800800000000000000
+      internalID: 630676927856989073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_9
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 996
+        width: 148
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ddd6c93729d8d200800000000000000
+      internalID: 205152545541643729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_10
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 996
+        width: 148
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30dfc822205eddb50800000000000000
+      internalID: 6619698824636857603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_11
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 996
+        width: 149
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55389b30a3ea6c30800000000000000
+      internalID: 4353542267141109085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_12
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 752
+        width: 149
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5883c2db377a210800000000000000
+      internalID: 1344170270121297325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_13
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 752
+        width: 148
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45638e4a011991e70800000000000000
+      internalID: 9086453223868872276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_14
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 752
+        width: 148
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207722d62e6f98e10800000000000000
+      internalID: 2200561345301214978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_15
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 752
+        width: 149
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23660c3f8682874f0800000000000000
+      internalID: -830869700018674126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_16
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 752
+        width: 147
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87610249d9869aac0800000000000000
+      internalID: -3843425780979722632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_17
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 752
+        width: 147
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949f2c2f0d8b04940800000000000000
+      internalID: 5278421970843793737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_18
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 752
+        width: 147
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a112950414bc61c60800000000000000
+      internalID: 7788636086696747290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_19
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 752
+        width: 149
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e16b54324b5aa10800000000000000
+      internalID: 1920138879729802763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_20
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 752
+        width: 147
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c1d4ef54d1c0000800000000000000
+      internalID: 3409886176943179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_21
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 752
+        width: 148
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff25ef9c47156b50800000000000000
+      internalID: 6585695647966769144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_22
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 752
+        width: 148
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f828dc193693b0f0800000000000000
+      internalID: -1102372311734408973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_23
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 752
+        width: 149
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc6fd71aff4bd010800000000000000
+      internalID: 1214652460067417335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_24
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 510
+        width: 149
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44973b8699863c010800000000000000
+      internalID: 1207924133161302340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_25
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 510
+        width: 148
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fae335d74079a510800000000000000
+      internalID: 1560902199682525944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_26
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 510
+        width: 148
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b03554599deb60f0800000000000000
+      internalID: -1122542439298158415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_27
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 510
+        width: 147
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aca4950295df58f90800000000000000
+      internalID: -6951871890539853110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_28
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 510
+        width: 147
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b314d50347862d8d0800000000000000
+      internalID: -2823079168170966725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_29
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 510
+        width: 146
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf71f81698b28bc70800000000000000
+      internalID: 8986980925465106427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_30
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 510
+        width: 147
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44fd54fb3fcd6a420800000000000000
+      internalID: 2641041170943565636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_31
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 510
+        width: 147
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81901b07bac5c25a0800000000000000
+      internalID: -6544754267076359912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_32
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 510
+        width: 147
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c84d3af57f25040c0800000000000000
+      internalID: -4593580397502933876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_33
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 510
+        width: 148
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e9b30640e999340800000000000000
+      internalID: 4871098213609479789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_34
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 510
+        width: 148
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e593faf004979e030800000000000000
+      internalID: 3524481499442133342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_35
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 510
+        width: 149
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db64cf7ab35b99300800000000000000
+      internalID: 259437721376540349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_36
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 266
+        width: 149
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 303cc70630d36a1b0800000000000000
+      internalID: -5645757998149352701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_37
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 266
+        width: 148
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f445919cda966970800000000000000
+      internalID: 8747849598339728629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_38
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 266
+        width: 148
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee1f178daac14810800000000000000
+      internalID: 1747900977041579752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_39
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 266
+        width: 147
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4040cf8d93b590910800000000000000
+      internalID: 1804073429750252548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_40
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 266
+        width: 147
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b02b9f97d3959760800000000000000
+      internalID: 7464034511741460665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_41
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 266
+        width: 146
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a536902159320590800000000000000
+      internalID: -7709536591503018591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_42
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 266
+        width: 147
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c55561e9704f7160800000000000000
+      internalID: 7025404835937998276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_43
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 266
+        width: 147
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6e8df3a4b99064f0800000000000000
+      internalID: -837500529566445972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_44
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 266
+        width: 149
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53eb102519ad760b0800000000000000
+      internalID: -5735375282752078283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_45
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 266
+        width: 148
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f5b5b6c8317a260800000000000000
+      internalID: 7108672030645116708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_46
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 266
+        width: 148
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029d54b555b83f810800000000000000
+      internalID: 1797933874970745120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_47
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 266
+        width: 149
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d698ecea40d06d0800000000000000
+      internalID: -3022754626059801269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_48
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 20
+        width: 148
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6cedd90284dcacb0800000000000000
+      internalID: -4851269043608490902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_49
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 20
+        width: 148
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c8abb3e10fe6120800000000000000
+      internalID: 2409126863331560487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_50
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 21
+        width: 148
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6566af00d4c50f7e0800000000000000
+      internalID: -1733784370738993578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_51
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 20
+        width: 146
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8845898ce3326bd30800000000000000
+      internalID: 4446780434635314312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_52
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 20
+        width: 146
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a33354a5666654a0800000000000000
+      internalID: -6604979216757607514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_53
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 22
+        width: 146
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a91439200d350510800000000000000
+      internalID: 1514683920580614566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_54
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 22
+        width: 146
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f90d88176e0dbb00800000000000000
+      internalID: 845848140971837942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation 4 - Persona 5 Royal - Tycoon Cards_55
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 0
+        width: 255
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9cf4b52e3e5c5480800000000000000
+      internalID: -8909142341832082274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
