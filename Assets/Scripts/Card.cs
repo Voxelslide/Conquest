@@ -10,6 +10,7 @@ public class Card
   public bool highlighted = false;
   public Sprite cardFace;
   public Sprite cardBack;
+  public BoxCollider2D collider = new BoxCollider2D();
 
   private float rotationSpeed = 2.0f;
 
@@ -26,35 +27,32 @@ public class Card
     }
     else gO.GetComponent<SpriteRenderer>().sprite = cardBack;
   }
+  IEnumerator Flip()
+  {
+    //squish x-scale to 0
+    for(float i = 1f; i> 0f; i -= 0.1f)
+		{
+      cardObject.transform.position.Scale(new Vector3(i, 1, 1));
+      yield return new WaitForSeconds(0.05f);
+		}
 
+    //change card sprite
+    if (faceUp) cardObject.GetComponent<SpriteRenderer>().sprite = cardBack;
+    else cardObject.GetComponent<SpriteRenderer>().sprite = cardFace;
+    faceUp = !faceUp;
 
-  public int GetNumber()
-	{
-    return number;
-	}
-
-    IEnumerator Flip()
+    //unsquish
+    for (float i = 0f; i < 1f; i += 0.1f)
     {
-/*      if (cardObject.transform.eulerAngles.z < 89.5)
-      {
-        //cardObject.transform.rotation = Quaternion.Slerp(new Quaternion(Quaternion), new Quaternion(0, 0, 90), rotationSpeed * Time.deltaTime);
-        // Vector3 * (rotationSpeed * Time.deltaTime));;
-        cardObject.transform.Rotate(new Vector3(0, 0, 90) * (rotationSpeed * Time.deltaTime));
-      }
-      else if (cardObject.transform.eulerAngles.z > 89.5)
-		  {
-        //cardObject.transform.rotation = new Vector3(0, 0, 90);
-		  }*/
-
-     //just scale the sprite x to basically 0, change sprite, and then unscale
-
-      faceUp = !faceUp;
-
-      return null;
+      cardObject.transform.position.Scale(new Vector3(i, 1, 1));
+      yield return new WaitForSeconds(0.05f);
     }
 
+    //ensure that the card's X scale is for sure ==1
+    cardObject.transform.position.Scale(new Vector3(1, 1, 1));
+  }
 
-  //public void OnCOllisionWithMouse --  call SendInput to GameManager with this as the parameter
+
 
 
 }

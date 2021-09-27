@@ -38,9 +38,9 @@ public sealed class GameState{
 		foreach (Card card in transferDeck.cards)
 		{
 			destinationDeck.cards.Add(card);
-			transferDeck.cards.Remove(card);
 			viewer.MoveCard(card, transferDeck, destinationDeck);
 		}
+		transferDeck.cards.Clear();
 	}
 
 	public void NextOpponentDeck(int roundsPlayed)
@@ -117,10 +117,16 @@ public sealed class GameState{
 			//shuffleBackWins
 		}
 
-		if(currentDuels < maxDuels) readyToPlayCard = true;
-		if (currentDuels == maxDuels) {
+		if (currentDuels > maxDuels) Debug.Log("currentDuels > maxDuels ERROR");
+		if (currentDuels == maxDuels)
+		{
+			readyToPlayCard = false;
 			roundsPlayed++;
 			NextOpponentDeck(roundsPlayed);
+		}
+		else{
+			readyToPlayCard = true;
+			viewer.ArrangePlayerHand();
 		}
 	}
 

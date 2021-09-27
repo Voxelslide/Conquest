@@ -50,12 +50,6 @@ public class GameManager : MonoBehaviour
 		GenerateAllCards();
  }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 	/* This is how the game will play out
 
 			Start
@@ -176,6 +170,12 @@ public class GameManager : MonoBehaviour
 		Debug.Log("Player hand created | Player Hand Count: " + gameState.pHand.cards.Count);
 		GenerateOpponentDecks();
 		Debug.Log("Opponent hands created. | ODeck1 Count: " + gameState.oDeck1.cards.Count + " | ODeck2 Count: " + gameState.oDeck2.cards.Count + " | ODeck3 Count: " + gameState.oDeck3.cards.Count);
+
+
+		gameState.TransferDeck(gameState.oDeck1, gameState.cODeck);
+
+		
+		//Get the game going
 		//gameState.NextOpponentDeck(gameState.roundsPlayed);
 	}
 

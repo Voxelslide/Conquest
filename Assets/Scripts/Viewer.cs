@@ -9,13 +9,13 @@ public class Viewer : MonoBehaviour
 	//gamestate reference here
 
 	public GameState gameState;
-	public float cardMoveSpeed = 10f;
+	public float cardMoveSpeed = 1f;
 	//put UI object reference here-- UI will just be a child of Viewer?
 
 
 	//Positions of stuff/things?
 
-	//viewer handles spaccing out the PLayerHand deck
+	//viewer handles spacing out the PLayerHand deck
 
     // Start is called before the first frame update
     void Start()
@@ -53,18 +53,27 @@ public class Viewer : MonoBehaviour
 	 * updates UI
 	 */
 
-	public void MoveCard(Card card, Deck startDeck, Deck endDeck)
+	IEnumerator MoveC(Card card, Vector3 startPos, Vector3 endPos)
 	{
-		//move a card from one deck to another
-		Vector3 startPos = startDeck.transform.position;
-		Vector3 endPos = endDeck.transform.position;
-		card.cardObject.transform.position = Vector3.MoveTowards(startPos, endPos, cardMoveSpeed * Time.deltaTime);
+		for (float i = 0; i <= 1f; i += 0.01f)
+		{
+			yield return new WaitForSeconds(0.0005f);
+			card.cardObject.transform.position = Vector3.Lerp(startPos, endPos, i);
+			Debug.Log(i);
+		}
 	}
 
+	public void MoveCard(Card card, Deck startDeck, Deck endDeck)
+	{
+		Vector3 startPos = startDeck.transform.position;
+		Vector3 endPos = endDeck.transform.position;
+		StartCoroutine(MoveC(card, startPos, endPos));
+	}
 	public void MoveCard(Card card, Vector3 startPos, Vector3 endPos)
 	{
-		card.cardObject.transform.position = Vector3.MoveTowards(startPos, endPos, cardMoveSpeed * Time.deltaTime);
+		StartCoroutine(MoveC(card, startPos, endPos));
 	}
+
 
 	public void ArrangePlayerHand()
 	{
