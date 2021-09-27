@@ -71,9 +71,9 @@ public sealed class GameState{
 		{
 			TransferDeck(oDeck2, cODeck);
 			setMaxDuels();
-		}
+		} else if (roundsPlayed >= 4)
 
-		readyToPlayCard = true;
+			readyToPlayCard = true;
 
 	}
 	public void setMaxDuels()
@@ -118,6 +118,10 @@ public sealed class GameState{
 		}
 
 		if(currentDuels < maxDuels) readyToPlayCard = true;
+		if (currentDuels == maxDuels) {
+			roundsPlayed++;
+			NextOpponentDeck(roundsPlayed);
+		}
 	}
 
 	public void shuffleBackWins(Deck winDeck, Deck destinationDeck, bool allFaceUp)

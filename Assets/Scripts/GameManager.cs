@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 	public Viewer viewer;
 
 	public string selectedCardFront = "Images/Cards/StandardCardFace/";
+	public string selectedCardBack = "Images/Cards/CardBack/BlackGoldCardBack";
 
 	// Start is called before the first frame update
 	void Start()
@@ -147,7 +148,6 @@ public class GameManager : MonoBehaviour
 	{
 		if(gameState.readyToPlayCard && gameState.pHand.cards.Contains(card))
 		{
-			//gameState
 			gameState.Duel();
 		}
 	}
@@ -173,44 +173,51 @@ public class GameManager : MonoBehaviour
 		//have cards spawn offscreen and then tell the viewer to moveCard to wherever it needs to go (have player cards spawn off the bottom of the screen and opponent cards spawn above the screen)
 
 		GeneratePlayerHand();
+		Debug.Log("Player hand created | Player Hand Count: " + gameState.pHand.cards.Count);
 		GenerateOpponentDecks();
-		gameState.NextOpponentDeck(gameState.roundsPlayed);
+		Debug.Log("Opponent hands created. | ODeck1 Count: " + gameState.oDeck1.cards.Count + " | ODeck2 Count: " + gameState.oDeck2.cards.Count + " | ODeck3 Count: " + gameState.oDeck3.cards.Count);
+		//gameState.NextOpponentDeck(gameState.roundsPlayed);
 	}
 
 	public void GeneratePlayerHand()
 	{
 		for (int i = 2; i < 15; i++)
 		{
+			//get front sprite path
 			string pathString;
-			GameObject cardObject = new GameObject();
-			cardObject.AddComponent<SpriteRenderer>();
-			Sprite cardSprite;
 			if (i == 14) {
-				pathString = "Images/Cards/StandardCardFace/ace_of_hearts";
+				pathString = selectedCardFront + "ace_of_hearts";
 			}
 			 else if(i == 11)
 			{
-				pathString = "Images/Cards/StandardCardFace/jack_of_hearts2";
+				pathString = selectedCardFront + "jack_of_hearts2";
 			}
 			else if (i == 12)
 			{
-				pathString = "Images/Cards/StandardCardFace/queen_of_hearts2";
+				pathString = selectedCardFront + "queen_of_hearts2";
 			}
 			else if (i == 13)
 			{
-				pathString = "Images/Cards/StandardCardFace/king_of_hearts2";
+				pathString = selectedCardFront + "king_of_hearts2";
 			}
-			else pathString = "Images/Cards/StandardCardFace/" + i + "_of_hearts";
+			else pathString = selectedCardFront + i + "_of_hearts";
 
-			cardSprite = Resources.Load<Sprite>(pathString);
-			cardObject.GetComponent<SpriteRenderer>().sprite = cardSprite;
+			//get cardSpriteFront
+			Sprite cardSpriteFront = Resources.Load<Sprite>(pathString);
+
+			//get cardSpriteBack
+			Sprite cardSpriteBack = Resources.Load<Sprite>(selectedCardBack);
+
+			//create card
+			GameObject cardObject = new GameObject();
+			cardObject.AddComponent<SpriteRenderer>();
+			Card card = new Card(i + 1, true, cardObject, cardSpriteFront, cardSpriteBack);
 			cardObject.transform.position = gameState.pHand.transform.position;
-			Card card = new Card(i + 1, true, cardObject);
 			gameState.pHand.cards.Add(card);
 		}
 
 		viewer.ArrangePlayerHand();
-		Debug.Log("PlayerHand Count: " + gameState.pHand.cards.Count);
+		//Debug.Log("PlayerHand Count: " + gameState.pHand.cards.Count);
 
 	}
 
@@ -227,29 +234,37 @@ public class GameManager : MonoBehaviour
 			for (int i = 2; i < 15; i++)
 			{
 				//string pathString;
-				GameObject cardObject = new GameObject();
-				cardObject.AddComponent<SpriteRenderer>();
-				Sprite cardSprite;
+				string frontPathString;
 				if (i == 14)
 				{
-					cardSprite = Resources.Load<Sprite>("Images/Cards/StandardCardFace/" + "ace_of_" + suit + "2");
+					frontPathString = selectedCardFront + "ace_of_" + suit + "2";
 				}
 				else if (i == 11)
 				{
-					cardSprite = Resources.Load<Sprite>("Images/Cards/StandardCardFace/" + "jack_of_" + suit + "2");
+					frontPathString = selectedCardFront + "jack_of_" + suit + "2";
 				}
 				else if (i == 12)
 				{
-					cardSprite = Resources.Load<Sprite>("Images/Cards/StandardCardFace/" + "queen_of_" + suit + "2");
+					frontPathString = selectedCardFront + "queen_of_" + suit + "2";
 				}
 				else if (i == 13)
 				{
-					cardSprite = Resources.Load<Sprite>("Images/Cards/StandardCardFace/" + "king_of_" + suit + "2");
+					frontPathString = selectedCardFront + "king_of_" + suit + "2";
 				}
-				else cardSprite = Resources.Load<Sprite>("Images/Cards/StandardCardFace/" + i + "_of_" + suit);
+				else frontPathString = selectedCardFront + i + "_of_" + suit;
 
-				cardObject.GetComponent<SpriteRenderer>().sprite = cardSprite;
-				Card card = new Card(i, true, cardObject);
+				//get card front
+				Sprite cardSpriteFront = Resources.Load<Sprite>(frontPathString);
+
+				//get card back
+				Sprite cardSpriteBack = Resources.Load<Sprite>(selectedCardBack);
+
+				//create card
+				GameObject cardObject = new GameObject();
+				cardObject.AddComponent<SpriteRenderer>();
+				Card card = new Card(i, true, cardObject, cardSpriteFront, cardSpriteBack);
+
+				//assign card to proper opponent deck
 				if (j == 0) {
 					gameState.oDeck1.cards.Add(card);
 					cardObject.transform.position = gameState.oDeck1.transform.position;
@@ -266,8 +281,8 @@ public class GameManager : MonoBehaviour
 				}
 			}
 
-
-			if (j == 0)
+			//debug stuff
+/*			if (j == 0)
 			{
 				Debug.Log("OpponentDeck1" + " Count: " + gameState.oDeck1.cards.Count);
 			}
@@ -278,7 +293,7 @@ public class GameManager : MonoBehaviour
 			if (j == 2)
 			{
 				Debug.Log("OpponentDeck3" + " Count: " + gameState.oDeck3.cards.Count);
-			}
+			}*/
 		}
 
 
