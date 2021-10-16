@@ -10,6 +10,8 @@ public class Viewer : MonoBehaviour
 
 	public GameState gameState;
 	public float cardMoveSpeed = 1f;
+	private int sideBuffer;
+
 	//put UI object reference here-- UI will just be a child of Viewer?
 
 
@@ -20,8 +22,8 @@ public class Viewer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+			sideBuffer = Camera.main.pixelWidth / 54;
+		}
 
     // Update is called once per frame
     void Update()
@@ -55,11 +57,11 @@ public class Viewer : MonoBehaviour
 
 	IEnumerator MoveC(Card card, Vector3 startPos, Vector3 endPos)
 	{
+		card.GetComponent<SpriteRenderer>().sortingOrder = 0;
 		for (float i = 0; i <= 1f; i += 0.01f)
 		{
 			yield return new WaitForSeconds(0.0005f);
-			card.cardObject.transform.position = Vector3.Lerp(startPos, endPos, i);
-			Debug.Log(i);
+			card.transform.position = Vector3.Lerp(startPos, endPos, i);
 		}
 	}
 
@@ -75,9 +77,25 @@ public class Viewer : MonoBehaviour
 	}
 
 
-	public void ArrangePlayerHand()
+	public void ArrangeDeck(Deck deck, bool isPlayerHand)
 	{
+		int yPos;
+		if (isPlayerHand) 
+		{
+			yPos = 0;
+			deck.Sort();
+		}
+		else yPos = Camera.main.pixelHeight;
 
+		int cardDistance = (Camera.main.scaledPixelWidth - sideBuffer * 2) / deck.cards.Count;
+
+
+		for (int i = 0; i< deck.cards.Count; i++)
+		{
+			Card card = deck.cards[i];
+			card.transform.position = new Vector3(sideBuffer + cardDistance * i, yPos, card.transform.position.z);
+			card.GetComponent<SpriteRenderer>().sortingOrder = i;
+		}
 
 		//do math for how everything should be arranged: L/R bounds, how spread out the cards should be based on on many there are (do something with percents or something), etc)
 		//foreach card in playerHand --> cars.transform.position = MoveCard(card, where the card is right now, where the card should be)
@@ -87,17 +105,6 @@ public class Viewer : MonoBehaviour
 	public void HighlightCard()
 	{
 		//if gameState.readyToPlayCard == true, and that card is in the playerHand, and the mouse is over it(in terms of camera?), then turn its highlighted bool on and offset its y pos by ____ amount
-	}
-	 public void SelectCard()
-	{
-		//if(gameState.readyToPlayCard && player clicks on a card that is in playerHand)
-		//tell gameState to :put that card into the playerDuelDeck
-		//                   get next opponent card and put it into opponentDuelDeck
-
-
-
-		//gameState.readyToPlayCard == false;
-		//gameState.Duel();
 	}
 
 	/* Final Result

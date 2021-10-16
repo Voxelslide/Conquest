@@ -231,6 +231,9 @@ MonoBehaviour:
   playerDuelingDeck: {fileID: 1699599857}
   opponentDuelingDeck: {fileID: 1369570812}
   viewer: {fileID: 1484777670}
+  selectedCardFront: Images/Cards/StandardCardFace/
+  selectedCardBack: Images/Cards/CardBack/BlackGoldCardBack
+  cardPrefab: {fileID: 7007011152555316466, guid: f81a69644e1b2af4eb1c66c95b37fa07, type: 3}
 --- !u!4 &120155284
 Transform:
   m_ObjectHideFlags: 0
@@ -713,6 +716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d28e41a06acad74abefe88e4ceb3e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardMoveSpeed: 1
 --- !u!1001 &1489213618
 PrefabInstance:
   m_ObjectHideFlags: 0

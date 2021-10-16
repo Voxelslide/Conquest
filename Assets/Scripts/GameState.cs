@@ -17,7 +17,6 @@ public sealed class GameState{
 
 	public Viewer viewer;
 
-
 	//Decks
 	public Deck pHand;      //playerHand
 	public Deck pWDeck;		//playerWinDeck
@@ -38,9 +37,24 @@ public sealed class GameState{
 		foreach (Card card in transferDeck.cards)
 		{
 			destinationDeck.cards.Add(card);
+			card.GetComponent<Card>().ChangeDeck(destinationDeck);
 			viewer.MoveCard(card, transferDeck, destinationDeck);
 		}
 		transferDeck.cards.Clear();
+	}
+
+	public void TransferCard(Card card, Deck destinationDeck)
+	{
+		Deck previousDeck = card.GetComponent<Deck>();
+
+		//remove card from current deck
+		previousDeck.cards.Remove(card);
+		//change card's reference to its deck
+		card.GetComponent<Card>().ChangeDeck(destinationDeck);
+		//add card to destinationDeck
+		destinationDeck.cards.Add(card);
+		//move card visually
+		viewer.MoveCard(card, previousDeck, destinationDeck);
 	}
 
 	public void NextOpponentDeck(int roundsPlayed)
@@ -87,6 +101,9 @@ public sealed class GameState{
 	public void Duel()
 	{
 		readyToPlayCard = false;
+		//play opponent card at random
+		TransferCard(cODeck.cards[Random.Range(0, cODeck.cards.Count - 1)], oDDeck);
+
 		//Get the top cards from the duel decks
 		Card playerCard = (Card) pDDeck.cards[pDDeck.cards.Count - 1];
 		Card opponentCard = (Card) oDDeck.cards[oDDeck.cards.Count - 1];
@@ -107,7 +124,7 @@ public sealed class GameState{
 			TransferDeck(pDDeck, oWDeck);
 			Debug.Log("OpponentWinDeck count: " + oDDeck.cards.Count);
 		}
-		//ELSE IT'S A TIE, but you would just wait for the player to click on another card
+		//ELSE IT'S A TIE, but you would just wait for the player to click on another card -- WHAT TO DO IF THERE'S A TIE AND NO CARDS LEFT
 		currentDuels++;
 
 		//checks to see if player or opponent need to shuffle their wins into their hand/currentDeck for next duel
@@ -126,7 +143,7 @@ public sealed class GameState{
 		}
 		else{
 			readyToPlayCard = true;
-			viewer.ArrangePlayerHand();
+			viewer.ArrangeDeck(pHand, true);
 		}
 	}
 

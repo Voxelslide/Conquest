@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 	public string selectedCardFront = "Images/Cards/StandardCardFace/";
 	public string selectedCardBack = "Images/Cards/CardBack/BlackGoldCardBack";
 
+	public GameObject cardPrefab;
+
 	// Start is called before the first frame update
 	void Start()
  {
@@ -140,8 +142,13 @@ public class GameManager : MonoBehaviour
 
 	public void SendInput(Card card)
 	{
+		Debug.Log("Input recieved from card: " + card);/////////////////////////////////////////
+
+
+
 		if(gameState.readyToPlayCard && gameState.pHand.cards.Contains(card))
 		{
+			gameState.TransferCard(card, gameState.pDDeck);
 			gameState.Duel();
 		}
 	}
@@ -174,33 +181,36 @@ public class GameManager : MonoBehaviour
 
 		gameState.TransferDeck(gameState.oDeck1, gameState.cODeck);
 
-		
+
 		//Get the game going
-		//gameState.NextOpponentDeck(gameState.roundsPlayed);
+		gameState.NextOpponentDeck(gameState.roundsPlayed);
 	}
 
 	public void GeneratePlayerHand()
 	{
 		for (int i = 2; i < 15; i++)
 		{
-			//get front sprite path
 			string pathString;
-			if (i == 14) {
-				pathString = selectedCardFront + "ace_of_hearts";
-			}
-			 else if(i == 11)
+			//constructing path to card face sprite
 			{
-				pathString = selectedCardFront + "jack_of_hearts2";
+				if (i == 14)
+				{
+					pathString = selectedCardFront + "ace_of_hearts";
+				}
+				else if (i == 11)
+				{
+					pathString = selectedCardFront + "jack_of_hearts2";
+				}
+				else if (i == 12)
+				{
+					pathString = selectedCardFront + "queen_of_hearts2";
+				}
+				else if (i == 13)
+				{
+					pathString = selectedCardFront + "king_of_hearts2";
+				}
+				else pathString = selectedCardFront + i + "_of_hearts";
 			}
-			else if (i == 12)
-			{
-				pathString = selectedCardFront + "queen_of_hearts2";
-			}
-			else if (i == 13)
-			{
-				pathString = selectedCardFront + "king_of_hearts2";
-			}
-			else pathString = selectedCardFront + i + "_of_hearts";
 
 			//get cardSpriteFront
 			Sprite cardSpriteFront = Resources.Load<Sprite>(pathString);
@@ -209,16 +219,13 @@ public class GameManager : MonoBehaviour
 			Sprite cardSpriteBack = Resources.Load<Sprite>(selectedCardBack);
 
 			//create card
-			GameObject cardObject = new GameObject();
-			cardObject.AddComponent<SpriteRenderer>();
-			Card card = new Card(i + 1, true, cardObject, cardSpriteFront, cardSpriteBack);
-			cardObject.transform.position = gameState.pHand.transform.position;
+			//GameObject cardObject = Instantiate(cardPrefab) as GameObject;??????????????????????????????????????????? do I even need this?
+			Card card = new Card(i, true, cardSpriteFront, cardSpriteBack, this, gameState.pHand);
+			
 			gameState.pHand.cards.Add(card);
 		}
-
-		viewer.ArrangePlayerHand();
-		//Debug.Log("PlayerHand Count: " + gameState.pHand.cards.Count);
-
+		//make the player cards look nice on screen
+		viewer.ArrangeDeck(gameState.pHand, true);
 	}
 
 	public void GenerateOpponentDecks()
@@ -235,23 +242,26 @@ public class GameManager : MonoBehaviour
 			{
 				//string pathString;
 				string frontPathString;
-				if (i == 14)
+				//constructing path to card face sprite
 				{
-					frontPathString = selectedCardFront + "ace_of_" + suit + "2";
+					if (i == 14)
+					{
+						frontPathString = selectedCardFront + "ace_of_" + suit + "2";
+					}
+					else if (i == 11)
+					{
+						frontPathString = selectedCardFront + "jack_of_" + suit + "2";
+					}
+					else if (i == 12)
+					{
+						frontPathString = selectedCardFront + "queen_of_" + suit + "2";
+					}
+					else if (i == 13)
+					{
+						frontPathString = selectedCardFront + "king_of_" + suit + "2";
+					}
+					else frontPathString = selectedCardFront + i + "_of_" + suit;
 				}
-				else if (i == 11)
-				{
-					frontPathString = selectedCardFront + "jack_of_" + suit + "2";
-				}
-				else if (i == 12)
-				{
-					frontPathString = selectedCardFront + "queen_of_" + suit + "2";
-				}
-				else if (i == 13)
-				{
-					frontPathString = selectedCardFront + "king_of_" + suit + "2";
-				}
-				else frontPathString = selectedCardFront + i + "_of_" + suit;
 
 				//get card front
 				Sprite cardSpriteFront = Resources.Load<Sprite>(frontPathString);
@@ -260,45 +270,30 @@ public class GameManager : MonoBehaviour
 				Sprite cardSpriteBack = Resources.Load<Sprite>(selectedCardBack);
 
 				//create card
-				GameObject cardObject = new GameObject();
-				cardObject.AddComponent<SpriteRenderer>();
-				Card card = new Card(i, true, cardObject, cardSpriteFront, cardSpriteBack);
+
+				//GameObject card = Instantiate(cardPrefab) as GameObject;
+				Card card = new Card(i, true, cardSpriteFront, cardSpriteBack, this, gameState.oDeck1);
+				gameState.pHand.cards.Add(card);
 
 				//assign card to proper opponent deck
 				if (j == 0) {
 					gameState.oDeck1.cards.Add(card);
-					cardObject.transform.position = gameState.oDeck1.transform.position;
+					card.GetComponent<Card>().ChangeDeck(gameState.oDeck1); //technically redundant but it's for consistency
+					transform.position = gameState.oDeck1.transform.position;
 				}
 				else if (j == 1)
 				{
 					gameState.oDeck2.cards.Add(card);
-					cardObject.transform.position = gameState.oDeck2.transform.position;
+					card.GetComponent<Card>().ChangeDeck(gameState.oDeck2);
+					transform.position = gameState.oDeck2.transform.position;
 				}
 				else
 				{
 					gameState.oDeck3.cards.Add(card);
-					cardObject.transform.position = gameState.oDeck3.transform.position;
+					card.GetComponent<Card>().ChangeDeck(gameState.oDeck3);
+					transform.position = gameState.oDeck3.transform.position;
 				}
 			}
-
-			//debug stuff
-/*			if (j == 0)
-			{
-				Debug.Log("OpponentDeck1" + " Count: " + gameState.oDeck1.cards.Count);
-			}
-			if (j == 1)
-			{
-				Debug.Log("OpponentDeck2" + " Count: " + gameState.oDeck2.cards.Count);
-			}
-			if (j == 2)
-			{
-				Debug.Log("OpponentDeck3" + " Count: " + gameState.oDeck3.cards.Count);
-			}*/
 		}
-
-
-
 	}
-
-
 }
