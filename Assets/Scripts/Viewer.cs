@@ -55,7 +55,7 @@ public class Viewer : MonoBehaviour
 	 * updates UI
 	 */
 
-	IEnumerator MoveC(Card card, Vector3 startPos, Vector3 endPos)
+	IEnumerator MoveC(GameObject card, Vector3 startPos, Vector3 endPos)
 	{
 		card.GetComponent<SpriteRenderer>().sortingOrder = 0;
 		for (float i = 0; i <= 1f; i += 0.01f)
@@ -65,13 +65,13 @@ public class Viewer : MonoBehaviour
 		}
 	}
 
-	public void MoveCard(Card card, Deck startDeck, Deck endDeck)
+	public void MoveCard(GameObject card, Deck startDeck, Deck endDeck)
 	{
 		Vector3 startPos = startDeck.transform.position;
 		Vector3 endPos = endDeck.transform.position;
 		StartCoroutine(MoveC(card, startPos, endPos));
 	}
-	public void MoveCard(Card card, Vector3 startPos, Vector3 endPos)
+	public void MoveCard(GameObject card, Vector3 startPos, Vector3 endPos)
 	{
 		StartCoroutine(MoveC(card, startPos, endPos));
 	}
@@ -92,7 +92,7 @@ public class Viewer : MonoBehaviour
 
 		for (int i = 0; i< deck.cards.Count; i++)
 		{
-			Card card = deck.cards[i];
+			GameObject card = deck.cards[i];
 			card.transform.position = new Vector3(sideBuffer + cardDistance * i, yPos, card.transform.position.z);
 			card.GetComponent<SpriteRenderer>().sortingOrder = i;
 		}

@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
 				//viewer/ gamemanager
 	 */
 
-	public void SendInput(Card card)
+	public void SendInput(GameObject card)
 	{
 		Debug.Log("Input recieved from card: " + card);/////////////////////////////////////////
 
@@ -219,8 +219,10 @@ public class GameManager : MonoBehaviour
 			Sprite cardSpriteBack = Resources.Load<Sprite>(selectedCardBack);
 
 			//create card
-			//GameObject cardObject = Instantiate(cardPrefab) as GameObject;??????????????????????????????????????????? do I even need this?
-			Card card = new Card(i, true, cardSpriteFront, cardSpriteBack, this, gameState.pHand);
+			GameObject card = Instantiate(cardPrefab) as GameObject;
+			//GameObject card = new GameObject();
+			//card.AddComponent<Card>();
+			card.GetComponent<Card>().SetUp(i, true, cardSpriteFront, cardSpriteBack, this, gameState.pHand);
 			
 			gameState.pHand.cards.Add(card);
 		}
@@ -271,8 +273,9 @@ public class GameManager : MonoBehaviour
 
 				//create card
 
-				//GameObject card = Instantiate(cardPrefab) as GameObject;
-				Card card = new Card(i, true, cardSpriteFront, cardSpriteBack, this, gameState.oDeck1);
+				GameObject card = Instantiate(cardPrefab) as GameObject;
+				//card.AddComponent<Card>();
+				card.GetComponent<Card>().SetUp(i, true, cardSpriteFront, cardSpriteBack, this, gameState.oDeck1);
 				gameState.pHand.cards.Add(card);
 
 				//assign card to proper opponent deck

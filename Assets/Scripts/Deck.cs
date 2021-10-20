@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
-    public List<Card> cards = new List<Card>();
+    public List<GameObject> cards = new List<GameObject>();
 
     public void AssignAllCardPositions()
     {
@@ -57,21 +57,21 @@ public class Deck : MonoBehaviour
 
   private void Swap(int i, int j)
   {
-    Card temp = cards[i];
+    GameObject temp = cards[i];
     cards[i] = cards[j];
     cards[j] = temp;
   }
 
   private int Partition(int low, int high)
   {
-    Card pivot = (Card)cards[high];
-    int pivotNumber = pivot.number;
+    GameObject pivot = cards[high];
+    int pivotNumber = pivot.GetComponent<Card>().number;
     int i = (low - 1);
 
     for (int j = low; j <= high - 1; j++)
     {
-      Card jj = (Card)cards[j];
-      if (jj.number < pivotNumber)
+      GameObject jj = cards[j];
+      if (jj.GetComponent<Card>().number < pivotNumber)
       {
         i++;
         Swap( i, j);

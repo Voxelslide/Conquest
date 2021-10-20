@@ -34,7 +34,7 @@ public sealed class GameState{
 	public void TransferDeck(Deck transferDeck, Deck destinationDeck)
 	{
 		//transfers all of the cards from the first Deck into the second Deck
-		foreach (Card card in transferDeck.cards)
+		foreach (GameObject card in transferDeck.cards)
 		{
 			destinationDeck.cards.Add(card);
 			card.GetComponent<Card>().ChangeDeck(destinationDeck);
@@ -43,7 +43,7 @@ public sealed class GameState{
 		transferDeck.cards.Clear();
 	}
 
-	public void TransferCard(Card card, Deck destinationDeck)
+	public void TransferCard(GameObject card, Deck destinationDeck)
 	{
 		Deck previousDeck = card.GetComponent<Deck>();
 
@@ -105,10 +105,10 @@ public sealed class GameState{
 		TransferCard(cODeck.cards[Random.Range(0, cODeck.cards.Count - 1)], oDDeck);
 
 		//Get the top cards from the duel decks
-		Card playerCard = (Card) pDDeck.cards[pDDeck.cards.Count - 1];
-		Card opponentCard = (Card) oDDeck.cards[oDDeck.cards.Count - 1];
+		GameObject playerCard = pDDeck.cards[pDDeck.cards.Count - 1];
+		GameObject opponentCard = oDDeck.cards[oDDeck.cards.Count - 1];
 
-		if(playerCard.number > opponentCard.number)
+		if(playerCard.GetComponent<Card>().number > opponentCard.GetComponent<Card>().number)
 		{
 			//win SFX --> Viewer
 			Debug.Log("Player Wins Duel");
@@ -116,7 +116,7 @@ public sealed class GameState{
 			TransferDeck(pDDeck, pWDeck);
 			Debug.Log("PlayerWinDeck count: " + pDDeck.cards.Count);
 		}
-		else if(playerCard.number < opponentCard.number)
+		else if(playerCard.GetComponent<Card>().number < opponentCard.GetComponent<Card>().number)
 		{
 			//lose SFX --> Viewer
 			Debug.Log("Opponent Wins Duel");
