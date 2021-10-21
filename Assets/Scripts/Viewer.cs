@@ -22,7 +22,7 @@ public class Viewer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-			sideBuffer = Camera.main.pixelWidth / 54;
+
 		}
 
     // Update is called once per frame
@@ -79,43 +79,26 @@ public class Viewer : MonoBehaviour
 
 	public void ArrangeDeck(Deck deck, bool isPlayerHand)
 	{
-		int yPos;
+		int cardWidth = (int) deck.cards[0].GetComponent<SpriteRenderer>().sprite.border.x/2;
+		sideBuffer = 35 + cardWidth;
+
+		Debug.Log("Arranging deck: " + deck.ToString());
 		if (isPlayerHand) 
 		{
-			yPos = 0;
 			deck.Sort();
 		}
-		else yPos = Camera.main.pixelHeight;
+		float yPos = Camera.main.WorldToScreenPoint(deck.transform.position).y;
 
-		int cardDistance = (Camera.main.scaledPixelWidth - sideBuffer * 2) / deck.cards.Count;
-
+		int cardDistance = (Camera.main.scaledPixelWidth - 2 * sideBuffer) / deck.cards.Count;
 
 		for (int i = 0; i< deck.cards.Count; i++)
 		{
-			GameObject card = deck.cards[i];
-			card.transform.position = new Vector3(sideBuffer + cardDistance * i, yPos, card.transform.position.z);
-			card.GetComponent<SpriteRenderer>().sortingOrder = i;
+			Vector3 startPos = deck.cards[i].transform.position;
+			Vector3 targetPos = Camera.main.ScreenToWorldPoint(new Vector3(sideBuffer*3 + cardWidth  +  cardDistance * i, yPos, 10));
+			MoveC(deck.cards[i].gameObject, startPos, targetPos);
+			deck.cards[i].GetComponent<SpriteRenderer>().sortingOrder = i;
 		}
-
-		//do math for how everything should be arranged: L/R bounds, how spread out the cards should be based on on many there are (do something with percents or something), etc)
-		//foreach card in playerHand --> cars.transform.position = MoveCard(card, where the card is right now, where the card should be)
-		//ALSO IMPORTANT: make each card be behind/ infront of the following card, the cards should all be ascending on top of each other and shouldn't have weird overlaps
 	}
-
-	public void HighlightCard()
-	{
-		//if gameState.readyToPlayCard == true, and that card is in the playerHand, and the mouse is over it(in terms of camera?), then turn its highlighted bool on and offset its y pos by ____ amount
-	}
-
-	/* Final Result
-	 
-	 Have special UI thing that shows
-					W/L ratio -- VIEWER
-					SFX -- VIEWER
-					Animations? --VIEWER
-					Button to go back to main menu -- VIEWER/ UI
-	 
-	 */
 
 	public void FinalResult()
 	{

@@ -43,10 +43,8 @@ public sealed class GameState{
 		transferDeck.cards.Clear();
 	}
 
-	public void TransferCard(GameObject card, Deck destinationDeck)
+	public void TransferCard(GameObject card, Deck previousDeck, Deck destinationDeck)
 	{
-		Deck previousDeck = card.GetComponent<Deck>();
-
 		//remove card from current deck
 		previousDeck.cards.Remove(card);
 		//change card's reference to its deck
@@ -81,48 +79,65 @@ public sealed class GameState{
 			setMaxDuels();
 		}
 		//boss time
-		else if (roundsPlayed == 3) //transfer 
+		else if (roundsPlayed == 3) //transfer bossDeck into CurrentOpponentDeck and playerWinDeck to playerHandDeck
 		{
-			TransferDeck(oDeck2, cODeck);
+			TransferDeck(bDeck, cODeck);
 			setMaxDuels();
 		} else if (roundsPlayed >= 4)
+		{
+			Debug.Log("Game Over");
+		}
 
-			readyToPlayCard = true;
 
 	}
 	public void setMaxDuels()
 	{
 		if (cODeck.cards.Count > pHand.cards.Count) maxDuels = cODeck.cards.Count;
 		else maxDuels = pHand.cards.Count;
+		Debug.Log("Max Duels: " + maxDuels);
+
 
 		currentDuels = 1;
+
+		viewer.ArrangeDeck(cODeck, false);
+		readyToPlayCard = true;
 	}
 
+/*	public void StartDuel()
+	{
+		StartCoroutine(Duel());
+	}*/
+
+	//IEnumerator Duel()
 	public void Duel()
 	{
 		readyToPlayCard = false;
 		//play opponent card at random
-		TransferCard(cODeck.cards[Random.Range(0, cODeck.cards.Count - 1)], oDDeck);
+		int randOpponentCardIndex = Random.Range(0, cODeck.cards.Count - 1);
+		TransferCard(cODeck.cards[randOpponentCardIndex], cODeck, oDDeck);
 
 		//Get the top cards from the duel decks
 		GameObject playerCard = pDDeck.cards[pDDeck.cards.Count - 1];
 		GameObject opponentCard = oDDeck.cards[oDDeck.cards.Count - 1];
 
-		if(playerCard.GetComponent<Card>().number > opponentCard.GetComponent<Card>().number)
+		//yield return new WaitForSeconds(2);
+		Debug.Log("Player: " + playerCard.GetComponent<Card>().number + " | Opponent: " + opponentCard.GetComponent<Card>().number);
+
+		if (playerCard.GetComponent<Card>().number > opponentCard.GetComponent<Card>().number)
 		{
 			//win SFX --> Viewer
-			Debug.Log("Player Wins Duel");
+			//Debug.Log("Player Wins Duel");
 			TransferDeck(oDDeck, pWDeck);
 			TransferDeck(pDDeck, pWDeck);
-			Debug.Log("PlayerWinDeck count: " + pDDeck.cards.Count);
+			//Debug.Log("PlayerWinDeck count: " + pDDeck.cards.Count);
 		}
 		else if(playerCard.GetComponent<Card>().number < opponentCard.GetComponent<Card>().number)
 		{
 			//lose SFX --> Viewer
-			Debug.Log("Opponent Wins Duel");
+			//Debug.Log("Opponent Wins Duel");
 			TransferDeck(oDDeck, oWDeck);
 			TransferDeck(pDDeck, oWDeck);
-			Debug.Log("OpponentWinDeck count: " + oDDeck.cards.Count);
+			//Debug.Log("OpponentWinDeck count: " + oDDeck.cards.Count);
 		}
 		//ELSE IT'S A TIE, but you would just wait for the player to click on another card -- WHAT TO DO IF THERE'S A TIE AND NO CARDS LEFT
 		currentDuels++;
@@ -146,6 +161,8 @@ public sealed class GameState{
 			viewer.ArrangeDeck(pHand, true);
 		}
 	}
+
+
 
 	public void shuffleBackWins(Deck winDeck, Deck destinationDeck, bool allFaceUp)
 	{

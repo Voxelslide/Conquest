@@ -11,6 +11,7 @@ public class Card : MonoBehaviour
   public Sprite cardBack;
   public GameManager gameManager;
   public Deck deck;
+  
 
   private float rotationSpeed = 2.0f;
 
@@ -67,8 +68,7 @@ public class Card : MonoBehaviour
   public void OnMouseDown()
 	{
     Debug.Log("Card " + this.ToString() + " clicked.");
-    //GameObject thisGameObject = game;
-    gameManager.SendInput(this.gameObject);
+    gameManager.SendInput(this.gameObject, deck);
 	}
 
 }
