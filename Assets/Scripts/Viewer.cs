@@ -5,31 +5,13 @@ using UnityEngine;
 public class Viewer : MonoBehaviour
 {
 
-	//viewer also needs a reference to the gamestate so it can update the UI
-	//gamestate reference here
-
 	public GameState gameState;
 	public float cardMoveSpeed = 1f;
-	private int sideBuffer;
+	private float sideBuffer;
 
 	//put UI object reference here-- UI will just be a child of Viewer?
 
 
-	//Positions of stuff/things?
-
-	//viewer handles spacing out the PLayerHand deck
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-		}
-
-    // Update is called once per frame
-    void Update()
-    {
-        //get location of all cards and render them
-    }
 
 	//Make a Win SFX function
 	public void WinSFX()
@@ -49,11 +31,6 @@ public class Viewer : MonoBehaviour
 
 	}
 
-	/*Done in update:
-	 * checks for player input and sends it to the gamemanager/gamestate???????
-	 * checks every card and places it where it needs to be
-	 * updates UI
-	 */
 
 	IEnumerator MoveC(GameObject card, Vector3 startPos, Vector3 endPos)
 	{
@@ -79,32 +56,105 @@ public class Viewer : MonoBehaviour
 
 	public void ArrangeDeck(Deck deck, bool isPlayerHand)
 	{
-		int cardWidth = (int) deck.cards[0].GetComponent<SpriteRenderer>().sprite.border.x/2;
-		sideBuffer = 35 + cardWidth;
+		float cardWidth = 0.8f;
 
-		Debug.Log("Arranging deck: " + deck.ToString());
 		if (isPlayerHand) 
 		{
+			deck.AllFaceUp();
 			deck.Sort();
 		}
-		float yPos = Camera.main.WorldToScreenPoint(deck.transform.position).y;
 
-		int cardDistance = (Camera.main.scaledPixelWidth - 2 * sideBuffer) / deck.cards.Count;
+		float yPos = deck.transform.position.y;
+		float cardDistance = 17f / (deck.cards.Count == 0 ? 1 : deck.cards.Count);
 
 		for (int i = 0; i< deck.cards.Count; i++)
 		{
 			Vector3 startPos = deck.cards[i].transform.position;
-			Vector3 targetPos = Camera.main.ScreenToWorldPoint(new Vector3(sideBuffer*3 + cardWidth  +  cardDistance * i, yPos, 10));
-			MoveC(deck.cards[i].gameObject, startPos, targetPos);
-			deck.cards[i].GetComponent<SpriteRenderer>().sortingOrder = i;
+			Vector3 targetPos = new Vector3(-8.5f + sideBuffer + cardWidth  +  cardDistance * i, yPos, 0);
+			MoveCard(deck.cards[i], startPos, targetPos);
+			if (isPlayerHand)
+			{
+				deck.cards[i].GetComponent<SpriteRenderer>().sortingOrder = i;
+			}
+			else
+			{
+				deck.cards[i].GetComponent<SpriteRenderer>().sortingOrder = deck.cards.Count - 1 - i;
+			}
 		}
 	}
 
-	public void FinalResult()
+	//Have a method to start showing the boss winRate/lossRate onscreen as you fight the boss
+	public void StartShowingBossWL()
 	{
 
 	}
 
 
+	//Is called when game ends/ player wins/loses
+	public void FinalResult()
+	{
+		if (!gameState.gameLost)
+		{
+			//this only happens when the player has a positive/even win rate with the final boss
+			//if tie
+			if(gameState.playerBossWins == gameState.playerBossLosses)
+			{
+				//tie
+				ShowResults(0, "That was close! You tied with the boss deck.");
+
+			}
+			else//player wins
+			{
+				Debug.Log("Player Wins!");
+				ShowResults(1, "You beat the boss deck!");
+
+			}
+		}
+
+		else
+		{
+			Debug.Log("Player Loses.");
+			//if player hasn't reached the boss yet or ran out of cards during the boss fight
+			if ((gameState.playerBossWins == 0 && gameState.playerBossLosses == 0) || gameState.pHand.cards.Count == 0 && gameState.pWDeck.cards.Count == 0)
+			{
+				ShowResults(-1, "You ran out of cards...");
+			}
+			else // else the player has a losing record against the boss
+			{
+				ShowResults(-1, "You lost to the boss...");
+			}
+		}
+	}
+
+	private void ShowResults(int win, string endMessage)
+	{
+		//int win: win = 1 | tie = 0 | loss = -1
+		//EndMessage is info on the result of the game
+		/*
+		 win : "You beat the boss deck!"
+		 tie : "That was close! You ties with the boss deck."
+		 loss : "You lost to the boss..."
+		 early loss : "You ran out of cards..."
+		 */
+
+		//shows UI stuff for if the player won or lost
+		if (win == 1)
+		{
+			//show Win on screen
+		}
+		if (win == 0)
+		{
+			//show tie on screen
+		}
+		else
+		{
+			//show lose on screen
+		}
+		//show endMessage
+
+		//also show player total winRate/lossRate
+
+		//BTW the boss winRate will be shown already if the player has made it to the boss
+	}
 
 }

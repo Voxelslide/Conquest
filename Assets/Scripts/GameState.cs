@@ -11,23 +11,25 @@ public sealed class GameState{
 	public int playerBossWins = 0;
 	public int playerBossLosses = 0;
 	public bool gameLost = false;
+	public bool gameOver = false;
 	private int maxDuels;
 	private int currentDuels = 1;
 	public bool readyToPlayCard = false;
+	private bool isBossRound = false;
 
 	public Viewer viewer;
 
 	//Decks
-	public Deck pHand;      //playerHand
+	public Deck pHand;    //playerHand
 	public Deck pWDeck;		//playerWinDeck
-	public Deck oDeck1;			//opponentDeck1
-	public Deck oDeck2;			//opponentDeck2
-	public Deck oDeck3;			//opponentDeck3
-	public Deck bDeck;			//bossDeck
-	public Deck cODeck;			//currentOpponentDeck
+	public Deck oDeck1;		//opponentDeck1
+	public Deck oDeck2;		//opponentDeck2
+	public Deck oDeck3;		//opponentDeck3
+	public Deck bDeck;		//bossDeck
+	public Deck cODeck;		//currentOpponentDeck
 	public Deck oWDeck;		//opponentWinDeck
-	public Deck pDDeck;//playerDuelingDeck  //When player plays a card, it goes into this deck. If there's a tie, then the player plays another card and it goes into this deck
-	public Deck oDDeck;//opponentDuelingDeck  //When opponent plays a card, it goes into this deck. If there's a tie, then the opponent plays another card and it goes into this deck
+	public Deck pDDeck;		//playerDuelingDeck  //When player plays a card, it goes into this deck. If there's a tie, then the player plays another card and it goes into this deck
+	public Deck oDDeck;		//opponentDuelingDeck  //When opponent plays a card, it goes into this deck. If there's a tie, then the opponent plays another card and it goes into this deck
 
 
 	//Gamelogic functions
@@ -52,9 +54,10 @@ public sealed class GameState{
 		//add card to destinationDeck
 		destinationDeck.cards.Add(card);
 		//move card visually
-		viewer.MoveCard(card, previousDeck, destinationDeck);
+		viewer.MoveCard(card, card.transform.position, destinationDeck.transform.position);
 	}
 
+	//This is called when starting the game and after each subsequent round
 	public void NextOpponentDeck(int roundsPlayed)
 	{
 		if (roundsPlayed == 0) //transfer opponentDeck1 into currentOpponentDeck
@@ -79,48 +82,58 @@ public sealed class GameState{
 			setMaxDuels();
 		}
 		//boss time
-		else if (roundsPlayed == 3) //transfer bossDeck into CurrentOpponentDeck and playerWinDeck to playerHandDeck
+		else if (roundsPlayed == 3) //transfer opponentWinDeck to bossDeck, bossDeck into CurrentOpponentDeck and playerWinDeck to playerHandDeck
 		{
+			TransferDeck(cODeck, oWDeck);
+			TransferDeck(oWDeck, bDeck);
 			TransferDeck(bDeck, cODeck);
+			TransferDeck(pWDeck, pHand);
 			setMaxDuels();
-		} else if (roundsPlayed >= 4)
+			isBossRound = true;
+			viewer.StartShowingBossWL();
+		} else if (roundsPlayed >= 4)//the game is over
 		{
+			isBossRound = false;
+			if (playerBossWins >= playerBossLosses) gameLost = false;
 			Debug.Log("Game Over");
+			gameOver = true;
+			viewer.FinalResult();
 		}
 
 
 	}
 	public void setMaxDuels()
 	{
+		//find which deck has the hihger amount of cards and set maxDuels to that number
 		if (cODeck.cards.Count > pHand.cards.Count) maxDuels = cODeck.cards.Count;
 		else maxDuels = pHand.cards.Count;
 		Debug.Log("Max Duels: " + maxDuels);
 
+		currentDuels = 0;
 
-		currentDuels = 1;
-
+		//prep for the next round
+		viewer.ArrangeDeck(pHand, true);
 		viewer.ArrangeDeck(cODeck, false);
+		cODeck.AllFaceDown();
 		readyToPlayCard = true;
 	}
 
-/*	public void StartDuel()
-	{
-		StartCoroutine(Duel());
-	}*/
-
-	//IEnumerator Duel()
-	public void Duel()
+	public void DuelOne()
 	{
 		readyToPlayCard = false;
+
 		//play opponent card at random
 		int randOpponentCardIndex = Random.Range(0, cODeck.cards.Count - 1);
+		//make sure that card is face up
+		if (!cODeck.cards[randOpponentCardIndex].GetComponent<Card>().faceUp) cODeck.cards[randOpponentCardIndex].GetComponent<Card>().Flip();
 		TransferCard(cODeck.cards[randOpponentCardIndex], cODeck, oDDeck);
+	}
 
+	public void DuelTwo() {
 		//Get the top cards from the duel decks
 		GameObject playerCard = pDDeck.cards[pDDeck.cards.Count - 1];
 		GameObject opponentCard = oDDeck.cards[oDDeck.cards.Count - 1];
 
-		//yield return new WaitForSeconds(2);
 		Debug.Log("Player: " + playerCard.GetComponent<Card>().number + " | Opponent: " + opponentCard.GetComponent<Card>().number);
 
 		if (playerCard.GetComponent<Card>().number > opponentCard.GetComponent<Card>().number)
@@ -129,6 +142,8 @@ public sealed class GameState{
 			//Debug.Log("Player Wins Duel");
 			TransferDeck(oDDeck, pWDeck);
 			TransferDeck(pDDeck, pWDeck);
+			playerWins++;
+			if (isBossRound) playerBossWins++;
 			//Debug.Log("PlayerWinDeck count: " + pDDeck.cards.Count);
 		}
 		else if(playerCard.GetComponent<Card>().number < opponentCard.GetComponent<Card>().number)
@@ -137,32 +152,57 @@ public sealed class GameState{
 			//Debug.Log("Opponent Wins Duel");
 			TransferDeck(oDDeck, oWDeck);
 			TransferDeck(pDDeck, oWDeck);
+			playerLosses++;
+			if (isBossRound) playerBossLosses++;
 			//Debug.Log("OpponentWinDeck count: " + oDDeck.cards.Count);
 		}
-		//ELSE IT'S A TIE, but you would just wait for the player to click on another card -- WHAT TO DO IF THERE'S A TIE AND NO CARDS LEFT
+		//ELSE IT'S A TIE, but you would just wait for the player to click on another card
 		currentDuels++;
+		Debug.Log("Duel " + currentDuels + "/" + maxDuels);
+
+		CheckForLoss();
 
 		//checks to see if player or opponent need to shuffle their wins into their hand/currentDeck for next duel
 		if(currentDuels < maxDuels && (pHand.cards.Count == 0 || cODeck.cards.Count == 0))
 		{
-			//if(pHand.cards.Count == 0) shuffle the cards back into player hand and make them facedown so the player can't see what they're playing
-			//shuffleBackWins
+			if (pHand.cards.Count == 0) 
+			{
+				shuffleBackWins(pWDeck, pHand, true);
+			}
+			//shuffle the cards back into player hand and make them facedown so the player can't see what they're playing
+			else
+			{
+				shuffleBackWins(oWDeck, cODeck, false);
+			}
 		}
 
 		if (currentDuels > maxDuels) Debug.Log("currentDuels > maxDuels ERROR");
-		if (currentDuels == maxDuels)
+		if (currentDuels == maxDuels)//if round is over
 		{
 			readyToPlayCard = false;
 			roundsPlayed++;
-			NextOpponentDeck(roundsPlayed);
+			/*if(!isBossRound)*/NextOpponentDeck(roundsPlayed);
 		}
-		else{
+		else{//else round isn't over and wait for player to play next card
 			readyToPlayCard = true;
 			viewer.ArrangeDeck(pHand, true);
+			viewer.ArrangeDeck(cODeck, false);
 		}
 	}
 
-
+	public void CheckForLoss()
+	{
+		//Check if player win deck size == 0 && player hand size == 0
+		if (pWDeck.cards.Count == 0 && pHand.cards.Count == 0)
+		{
+			gameLost = true;
+			gameOver = true;
+		}
+		if (gameLost)
+		{
+			viewer.FinalResult();
+		}
+	}
 
 	public void shuffleBackWins(Deck winDeck, Deck destinationDeck, bool allFaceUp)
 	{

@@ -142,28 +142,22 @@ public class GameManager : MonoBehaviour
 
 	public void SendInput(GameObject card, Deck deck)
 	{
+		//card.GetComponent<Card>().Flip(); // Testing stuff
 		if(gameState.readyToPlayCard && gameState.pHand.cards.Contains(card))
 		{
-
+			if (!card.GetComponent<Card>().faceUp) card.GetComponent<Card>().Flip();
 			gameState.TransferCard(card, card.GetComponent<Card>().deck, gameState.pDDeck);
-			Debug.Log("Trying to start duel");
-			//gameState.StartDuel();
-			gameState.Duel();
+			StartCoroutine(WholeDuel());
 		}
 	}
 
-	public void CheckForLoss()
-    {
-        //Check if player win deck size == 0 && player hand size == 0
-        if(playerWinDeck.cards.Count == 0 && playerHand.cards.Count == 0)
-        {
-            gameState.gameLost = true;
-        }
-			if (gameState.gameLost)
-			{
-				viewer.FinalResult();
-			}
-    }
+	IEnumerator WholeDuel()
+	{
+		gameState.DuelOne();
+		yield return new WaitForSeconds(1.5f);
+		gameState.DuelTwo();
+		gameState.CheckForLoss();
+	}
 
   public void GenerateAllCards()
   {
@@ -225,9 +219,8 @@ public class GameManager : MonoBehaviour
 			card.GetComponent<Card>().SetUp(i, true, cardSpriteFront, cardSpriteBack, this, gameState.pHand);
 			card.name = cardName;
 			gameState.pHand.cards.Add(card);
+			card.transform.position = gameState.pHand.transform.position;
 		}
-		//make the player cards look nice on screen
-		viewer.ArrangeDeck(gameState.pHand, true);
 	}
 
 	public void GenerateOpponentDecks()
@@ -249,23 +242,23 @@ public class GameManager : MonoBehaviour
 				{
 					if (i == 14)
 					{
-						frontPathString = selectedCardFront + "ace_of_" + suit + "2";
-						cardName = "ace_of_" + suit + "2";
+						frontPathString = selectedCardFront + "ace_of_" + suit;
+						cardName = "ace_of_" + suit;
 					}
 					else if (i == 11)
 					{
 						frontPathString = selectedCardFront + "jack_of_" + suit + "2";
-						cardName = "jack_of_" + suit + "2";
+						cardName = "jack_of_" + suit;
 					}
 					else if (i == 12)
 					{
 						frontPathString = selectedCardFront + "queen_of_" + suit + "2";
-						cardName = "queen_of_" + suit + "2";
+						cardName = "queen_of_" + suit;
 					}
 					else if (i == 13)
 					{
 						frontPathString = selectedCardFront + "king_of_" + suit + "2";
-						cardName = "king_of_" + suit + "2";
+						cardName = "king_of_" + suit;
 					}
 					else
 					{
@@ -305,5 +298,13 @@ public class GameManager : MonoBehaviour
 				}
 			}
 		}
+
+			gameState.oDeck1.Shuffle();
+			gameState.oDeck1.AllFaceDown();
+			gameState.oDeck2.Shuffle();
+			gameState.oDeck2.AllFaceDown();
+			gameState.oDeck3.Shuffle();
+			gameState.oDeck3.AllFaceDown();
+
 	}
 }

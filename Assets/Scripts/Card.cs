@@ -6,7 +6,7 @@ public class Card : MonoBehaviour
 {
   public int number;
   public bool faceUp;
-  public bool highlighted = false;
+  //public bool highlighted = false;
   public Sprite cardFace;
   public Sprite cardBack;
   public GameManager gameManager;
@@ -40,7 +40,13 @@ public class Card : MonoBehaviour
     deck = d;
 	}
 
-  IEnumerator Flip()
+
+  public void Flip()
+	{
+    StartCoroutine(FlipCard());
+	}
+
+  IEnumerator FlipCard() //The card is flipped but the animation doesn't work
   {
     //squish x-scale to 0
     for(float i = 1f; i> 0f; i -= 0.1f)
@@ -67,8 +73,13 @@ public class Card : MonoBehaviour
 
   public void OnMouseDown()
 	{
-    Debug.Log("Card " + this.ToString() + " clicked.");
-    gameManager.SendInput(this.gameObject, deck);
+
+    //only do this if the game is still in play
+    if (!gameManager.gameState.gameOver)
+    {
+      Debug.Log("Card " + this.ToString() + " clicked.");
+      gameManager.SendInput(this.gameObject, deck);
+    }
 	}
 
 }

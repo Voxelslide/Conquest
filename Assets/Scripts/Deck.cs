@@ -7,45 +7,40 @@ public class Deck : MonoBehaviour
 {
     public List<GameObject> cards = new List<GameObject>();
 
-    public void AssignAllCardPositions()
-    {
-        //This sounds like a good idea
-    }
-
     public void Sort()
     {
       //sorts cards
       QuickSort(0, cards.Count - 1);
     }
 
-
-  //I'm having a problem where the value of the card is stored in the Card script attached to a GameObject that is the card in the game. I can't access the value of the card because my decks
-  //are ArrayLists that store GameObject, not Card (and I think I ran into the same problem when I switched from ArrayLists to Lists). Since my cards are being stored as the GameObjects they are
-  //the information stored by the Card script on the Card object is lost because I can't implicitly cast from a GameObject to a Card.
-  //And when I instantiate the cards, I have to make them GameObjects. I can't instantiate Cards. How do I access the card part of my Card GameObjects?
-
-
-
-
     public void Shuffle()
 	{
     //shuffles all cards
-	}
-
-
-    public void AllFlip()
+    int n = cards.Count;
+    while (n > 1)
     {
-        //flips all cards in deck
+      n--;
+      int k = Random.Range(0, cards.Count-1);
+      GameObject c = cards[k];
+      cards[k] = cards[n];
+      cards[n] = c;
     }
+  }
 
     public void AllFaceUp()
     {
-        //makes all cards face up
+      foreach (GameObject card in cards)
+      {
+        if(!card.GetComponent<Card>().faceUp) card.GetComponent<Card>().Flip();
+      }
     }
 
     public void AllFaceDown()
     {
-        //makes all cards face down
+      foreach (GameObject card in cards)
+      {
+        if (card.GetComponent<Card>().faceUp) card.GetComponent<Card>().Flip();
+      }
     }
 
 
@@ -57,9 +52,12 @@ public class Deck : MonoBehaviour
 
   private void Swap(int i, int j)
   {
-    GameObject temp = cards[i];
-    cards[i] = cards[j];
-    cards[j] = temp;
+    if (cards[i].GetComponent<Card>().number != cards[j].GetComponent<Card>().number)
+    {
+      GameObject temp = cards[i];
+      cards[i] = cards[j];
+      cards[j] = temp;
+    }
   }
 
   private int Partition(int low, int high)
