@@ -30,8 +30,7 @@ public class GameManager : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
  {
-		//do the singleton instantiation stuff to create a gamestate
-
+		selectedCardBack = CardDataTransfer.cardBackPath;
 
 		//give the gamestate all of the decks that GameManager has a reference to - unless there's a better way to do this like the gaemstate itself accessing this stuff
 		gameState = new GameState();
@@ -275,8 +274,10 @@ public class GameManager : MonoBehaviour
 
 				//create card
 				GameObject card = Instantiate(cardPrefab) as GameObject;
-				card.GetComponent<Card>().SetUp(i, true, cardSpriteFront, cardSpriteBack, this, gameState.oDeck1);
+				card.GetComponent<Card>().SetUp(i, false, cardSpriteFront, cardSpriteBack, this, gameState.oDeck1);
 				card.name = cardName;
+
+				card.transform.position = new Vector3(0, 10, 0);
 
 				//assign card to proper opponent deck
 				if (j == 0) {

@@ -95,6 +95,7 @@ public sealed class GameState{
 		{
 			isBossRound = false;
 			if (playerBossWins >= playerBossLosses) gameLost = false;
+			else gameLost = true;
 			Debug.Log("Game Over");
 			gameOver = true;
 			viewer.FinalResult();
@@ -144,6 +145,7 @@ public sealed class GameState{
 			TransferDeck(pDDeck, pWDeck);
 			playerWins++;
 			if (isBossRound) playerBossWins++;
+			viewer.WinSFX();
 			//Debug.Log("PlayerWinDeck count: " + pDDeck.cards.Count);
 		}
 		else if(playerCard.GetComponent<Card>().number < opponentCard.GetComponent<Card>().number)
@@ -154,9 +156,14 @@ public sealed class GameState{
 			TransferDeck(pDDeck, oWDeck);
 			playerLosses++;
 			if (isBossRound) playerBossLosses++;
+			viewer.LossSFX();
 			//Debug.Log("OpponentWinDeck count: " + oDDeck.cards.Count);
 		}
 		//ELSE IT'S A TIE, but you would just wait for the player to click on another card
+		if (isBossRound)
+		{
+			viewer.UpdateBossWL(playerBossWins, playerBossLosses);
+		}
 		currentDuels++;
 		Debug.Log("Duel " + currentDuels + "/" + maxDuels);
 

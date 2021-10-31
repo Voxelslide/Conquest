@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Viewer : MonoBehaviour
 {
@@ -9,26 +11,42 @@ public class Viewer : MonoBehaviour
 	public float cardMoveSpeed = 1f;
 	private float sideBuffer;
 
-	//put UI object reference here-- UI will just be a child of Viewer?
+	public AudioSource source;
+	public AudioClip winSFX;
+	public AudioClip loseSFX;
+	public AudioClip bossWinSFX;
 
 
+	//UI references
+
+
+
+
+	public void Start()
+	{
+		this.transform.GetChild(0).GetChild(0).gameObject.SetActive(false); //Boss W/l
+		this.transform.GetChild(0).GetChild(1).gameObject.SetActive(false); //Result
+		this.transform.GetChild(0).GetChild(2).gameObject.SetActive(false); //Result Flavor Text
+		this.transform.GetChild(0).GetChild(3).gameObject.SetActive(false); //Total W/L
+		this.transform.GetChild(0).GetChild(4).gameObject.SetActive(false); //Main Menu Button
+	}
 
 	//Make a Win SFX function
 	public void WinSFX()
 	{
-
+		source.PlayOneShot(winSFX);
 	}
 
 	//Make Loss SFX function
-	public void LossWinSFX()
+	public void LossSFX()
 	{
-
+		source.PlayOneShot(loseSFX);
 	}
 
 	//Make Boss Win SFX function
 	public void BossWinSFX()
 	{
-
+		source.PlayOneShot(bossWinSFX);
 	}
 
 
@@ -86,28 +104,32 @@ public class Viewer : MonoBehaviour
 	//Have a method to start showing the boss winRate/lossRate onscreen as you fight the boss
 	public void StartShowingBossWL()
 	{
-
+		this.transform.GetChild(0).GetChild(0).gameObject.SetActive(true); //Boss W/l
 	}
 
+	public void UpdateBossWL(int wins, int losses)
+	{
+		this.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = ("Boss W/L: " + wins.ToString() + "/" + losses.ToString()); //Boss W/l
+	}
 
 	//Is called when game ends/ player wins/loses
 	public void FinalResult()
 	{
 		if (!gameState.gameLost)
 		{
-			//this only happens when the player has a positive/even win rate with the final boss
 			//if tie
-			if(gameState.playerBossWins == gameState.playerBossLosses)
+			if (gameState.playerBossWins == gameState.playerBossLosses)
 			{
 				//tie
 				ShowResults(0, "That was close! You tied with the boss deck.");
 
 			}
-			else//player wins
+			else
 			{
+				//player wins
 				Debug.Log("Player Wins!");
 				ShowResults(1, "You beat the boss deck!");
-
+				BossWinSFX();
 			}
 		}
 
@@ -123,6 +145,7 @@ public class Viewer : MonoBehaviour
 			{
 				ShowResults(-1, "You lost to the boss...");
 			}
+			LossSFX();
 		}
 	}
 
@@ -132,29 +155,40 @@ public class Viewer : MonoBehaviour
 		//EndMessage is info on the result of the game
 		/*
 		 win : "You beat the boss deck!"
-		 tie : "That was close! You ties with the boss deck."
+		 tie : "That was close! You tied with the boss deck."
 		 loss : "You lost to the boss..."
 		 early loss : "You ran out of cards..."
 		 */
 
 		//shows UI stuff for if the player won or lost
+		//set result
 		if (win == 1)
 		{
-			//show Win on screen
+			this.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = "WIN"; //Result
 		}
 		if (win == 0)
 		{
-			//show tie on screen
+			this.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = "TIE"; //Result
 		}
-		else
+		if (win == -1)
 		{
-			//show lose on screen
+			this.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = "LOOSE"; //Result
 		}
+		//show Win on screen
+		this.transform.GetChild(0).GetChild(1).gameObject.SetActive(true); //Result
+		
+		
 		//show endMessage
+		this.transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>().text = endMessage; //Result Flavor Text
+		this.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
+
 
 		//also show player total winRate/lossRate
+		this.transform.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>().text = "Total W/L: " + gameState.playerWins.ToString() + "/" + gameState.playerLosses.ToString();
+		this.transform.GetChild(0).GetChild(3).gameObject.SetActive(true); //Total W/L
 
-		//BTW the boss winRate will be shown already if the player has made it to the boss
+		//show main menu button
+		this.transform.GetChild(0).GetChild(4).gameObject.SetActive(true); //Main Menu Button
 	}
 
 }
